@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import Nav from './components/Nav'
+import Hero from './sections/Hero'
+import Services from './sections/Services'
+import ChooseUs from './sections/ChooseUs'
+import Portfolio from './sections/Portfolio'
+import Testimonial from './sections/Testimonial'
+import ContactUs from './sections/ContactUs'
+import Footer from './sections/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <header className='pb-[140px]'>
+      <Nav/>
+    </header>
+    <main>
+      <section className='pb-[200px]'>
+        <Hero/>
+      </section>
+      <section className='pb-[200px]'>
+        <Services/>
+      </section>
+      <section className='pb-[200px]'>
+        <ChooseUs/>
+      </section>
+      <section className='bg-primary py-[180px] rounded-[60px]'>
+        <Portfolio/>
+      </section>
+      <section className='py-[200px]'>
+        <Testimonial/>
+      </section>
+      <section className='pb-[200px]'>
+        <ContactUs/>
+      </section>
+    </main>
+    <footer className='bg-alpha-blue  rounded-t-[60px]'>
+      <Footer/>
+    </footer> 
     </>
   )
 }
